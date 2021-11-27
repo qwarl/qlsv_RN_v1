@@ -10,14 +10,16 @@ const Navigation = () => {
         headerShown: false,
     }
     return (
+        // <NavigationContainer>
+            <Stack.Navigator initialRouteName='Login' screenOptions={screenOptions}>
+                <Stack.Screen name='Login' component={Login} screenOptions={screenOptions} />
+                <Stack.Screen name='WelcomeScreen' component={WelcomeScreen} screenOptions={screenOptions} />
+                {/* <Stack.Screen name='BrandsContainer' component={BrandsContainer} screenOptions={screenOptions} /> */}
+                {/* <Stack.Screen name='ProductDetail' component={ProductDetail} screenOptions={screenOptions} />
+                <Stack.Screen name='Search' component={Search} screenOptions={screenOptions} /> */}
+            </Stack.Navigator>
 
-        <Stack.Navigator initialRouteName='Login' screenOptions={screenOptions}>
-            <Stack.Screen name='Login' component={Login} screenOptions={screenOptions} />
-            <Stack.Screen name='WelcomeScreen' component={WelcomeScreen} screenOptions={screenOptions} />
-            {/* <Stack.Screen name='BrandsContainer' component={BrandsContainer} screenOptions={screenOptions} /> */}
-            {/* <Stack.Screen name='ProductDetail' component={ProductDetail} screenOptions={screenOptions} />
-            <Stack.Screen name='Search' component={Search} screenOptions={screenOptions} /> */}
-        </Stack.Navigator>
+        // </NavigationContainer>
 
     )
 }

@@ -6,13 +6,9 @@ import Navigation from './navigation/Navigation';
 import Login from './screens/Login';
 export default function App() {
   return (
-    <View style={styles.container}>
-      <NavigationContainer>
-        <Navigation />
-      </NavigationContainer>
-      {/* <Login /> */}
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Navigation />
+    </NavigationContainer>
   );
 }
 
