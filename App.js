@@ -6,18 +6,21 @@ import Navigation from './navigation/Navigation';
 import Login from './screens/Login';
 export default function App() {
   return (
-    <NavigationContainer>
-      <Navigation />
-    </NavigationContainer>
+    // <View style={styles.container}>
+      <NavigationContainer>
+        <Navigation />
+      </NavigationContainer>
+
+    // </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    // flex: 1,
+    // backgroundColor: '#fff',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 });

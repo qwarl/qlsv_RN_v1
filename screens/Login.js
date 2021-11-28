@@ -25,8 +25,6 @@ const Login = ({route, navigation}) => {
                 <Text style={styles.loginText}>LOGIN</Text>
             </TouchableOpacity>
         </View>
-
-
     )
 }
 
