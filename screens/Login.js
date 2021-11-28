@@ -1,20 +1,21 @@
 import React, { useState } from 'react'
 import { Dimensions, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from 'react-native'
-
-const Login = ({route, navigation}) => {
+import axios from 'axios';
+const Login = ({ navigation }) => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const LoginButton = () => {
-       
-        if (userName == '' || password == '') {
-            ToastAndroid.show('Vui lòng không để trống username và password', ToastAndroid.SHORT);
-        }
-        else if (userName == 'admin' && password == 'admin') {
-            navigation.navigate('WelcomeScreen');
-            ToastAndroid.show('Đăng nhập thành công', ToastAndroid.SHORT);
-        } else {
-            ToastAndroid.show('Sai tài khoản hoặc mật khẩu', ToastAndroid.SHORT);
-        }
+        const url = `http://192.168.1.5:3000/admin/login`;
+        axios.post(url, { userName: userName, password: password })
+            .then(res => {
+                if (res['data'].status == 'SUCCESS') {
+                    navigation.navigate('WelcomeScreen', res['data'].admin)
+                    ToastAndroid.show('Đăng nhập thành công', ToastAndroid.SHORT);
+                } else {
+                    ToastAndroid.show('Vui lòng kiểm tra lại Username hoặc Password', ToastAndroid.SHORT);
+                }
+            })
+
     }
     return (
         <View style={styles.container}>
