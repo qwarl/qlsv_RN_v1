@@ -1,22 +1,15 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const WelcomeScreen = ({route,navigation}) => {
-    const {
-        fullName,
-        address,
-        phoneNumber
-    } = route.params
+const ManageSubAccount = () => {
     return (
         <View style={styles.container}>
-            <Text>Hi {fullName}</Text>
-            <Text>Địa chỉ: {address}</Text>
-            <Text>Số điện thoại: {phoneNumber}</Text>
+            <Text>Hi there, this is manage subadmin account screen</Text>
         </View>
     )
 }
 
-export default WelcomeScreen
+export default ManageSubAccount
 
 const styles = StyleSheet.create({
     container: {
@@ -24,5 +17,5 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
-      },
+    },
 })

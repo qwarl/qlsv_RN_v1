@@ -9,7 +9,7 @@ const Login = ({ navigation }) => {
         axios.post(url, { userName: userName, password: password })
             .then(res => {
                 if (res['data'].status == 'SUCCESS') {
-                    navigation.navigate('WelcomeScreen', res['data'].admin)
+                    navigation.navigate('Home', res['data'].admin)
                     ToastAndroid.show('Đăng nhập thành công', ToastAndroid.SHORT);
                 } else {
                     ToastAndroid.show('Vui lòng kiểm tra lại Username hoặc Password', ToastAndroid.SHORT);
@@ -25,7 +25,13 @@ const Login = ({ navigation }) => {
             <TouchableOpacity onPress={LoginButton} style={styles.css_LoginButton}>
                 <Text style={styles.loginText}>LOGIN</Text>
             </TouchableOpacity>
-        </View>
+
+            {/* lam nut dang nhap cho sinh vien */}
+            <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('LoginStudentScreen')}>
+                <Text style={styles.navButtonText}>Student? Click here</Text>
+            </TouchableOpacity>
+
+        </View >
     )
 }
 
@@ -73,5 +79,12 @@ const styles = StyleSheet.create({
     SignUpText: {
         fontSize: 20,
         color: '#6646ee',
+    },
+    navButton:{
+        marginTop:15,
+    },
+    navButtonText:{
+        fontSize:20,
+        color:'#6646ee'
     }
 })

@@ -2,16 +2,12 @@
 import React from 'react';
 import { StyleSheet, View, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
-import Navigation from './navigation/Navigation';
-import Login from './screens/Login';
+import Navigation from './navigations/Navigation';
 export default function App() {
   return (
-    // <View style={styles.container}>
-      <NavigationContainer>
-        <Navigation />
-      </NavigationContainer>
-
-    // </View>
+    <NavigationContainer>
+      <Navigation />
+    </NavigationContainer>
   );
 }
 
