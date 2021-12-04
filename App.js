@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import Navigation from './navigations/Navigation';
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer style={styles.container}>
       <Navigation />
     </NavigationContainer>
   );

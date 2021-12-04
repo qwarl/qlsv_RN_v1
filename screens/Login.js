@@ -80,11 +80,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#6646ee',
     },
-    navButton:{
-        marginTop:15,
+    navButton: {
+        marginTop: 15,
     },
-    navButtonText:{
-        fontSize:20,
-        color:'#6646ee'
+    navButtonText: {
+        fontSize: 20,
+        color: '#6646ee'
     }
 })

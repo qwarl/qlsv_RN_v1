@@ -1,5 +1,6 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Dimensions, StyleSheet, Text, View } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Button } from 'react-native-paper'
 
 //lay du lieu tu screen khac qua, da xai api roi
@@ -22,11 +23,9 @@ const HomeScreen = ({ route, navigation }) => {
 
     return (
         <View style={styles.container}>
-            <Button
-            style={styles.btnColor}
-                title='Manage account'
-                onPress={() => navigation.navigate('ManageSubAccount')}
-            />
+            <TouchableOpacity style={styles.css_button} onPress={() => navigation.navigate('ManageSubAccount')}>
+                <Text style={styles.css_textButton}>MANAGE ACCOUNT</Text>
+            </TouchableOpacity>
             <Text>Hi there, this is Home screen</Text>
         </View>
     )
@@ -34,6 +33,7 @@ const HomeScreen = ({ route, navigation }) => {
 
 
 export default HomeScreen
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     container: {
@@ -42,7 +42,23 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    btnColor:{
-        backgroundColor:'#6495ed'
-    }
+    btnColor: {
+        // backgroundColor:'#6495ed'
+    },
+    css_button: {
+        marginTop: 10,
+        width: width / 2,
+        height: height / 15,
+        backgroundColor: '#6495ed',
+        padding: 10,
+        borderRadius: 8,
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 28,
+        color: '#ffffff'
+    },
+    css_textButton: {
+        color: 'white',
+        fontSize: 15
+    },
 })
